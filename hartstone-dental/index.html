@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hartstone Dental — Middleton, WI | Modern Family Dentistry</title>
+<meta name="description" content="Hartstone Dental in Middleton, WI. Cleanings, cosmetic dentistry, implants, and emergency care in a calm, modern office. Book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0d7d7b; --teal-d:#0a6361; --teal-soft:#e6f4f3; --ink:#1c2b2a; --muted:#5f7472;
+  --bg:#fbfdfd; --card:#fff; --line:#e2eceb; --radius:16px;
+  --font-head:'Fraunces',serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2;font-weight:600}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.sec-head{max-width:620px;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.04rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;padding:15px 32px;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 26px rgba(13,125,123,.3)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--teal-d)}
+.btn-ghost{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-ghost:hover{background:var(--teal-soft)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(251,253,253,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-d));display:grid;place-items:center;color:#fff;font-size:1.4rem;flex:none}
+.brand-name{font-family:var(--font-head);font-weight:700;font-size:1.2rem}
+.brand-name small{display:block;font-family:var(--font-body);font-size:.66rem;font-weight:600;letter-spacing:.26em;color:var(--muted)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal);color:#fff;font-weight:600;padding:12px 24px;border-radius:999px;text-decoration:none;font-size:.93rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:var(--ink);border-radius:2px;margin:5px 0}
+.mobile-menu{display:none;background:#fff;border-top:1px solid var(--line);padding:8px 24px 20px}
+.mobile-menu a{display:block;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);font-weight:500}
+.mobile-menu.open{display:block}
+/* hero */
+.hero{padding:100px 0;background:linear-gradient(180deg,#f0f9f8 0%,var(--bg) 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,4.8vw,3.7rem);letter-spacing:-.5px;margin:14px 0 18px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p.lead{color:var(--muted);font-size:1.12rem;max-width:500px;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-proof{display:flex;gap:26px;flex-wrap:wrap;color:var(--muted);font-size:.93rem}
+.hero-proof strong{color:var(--ink)}
+.hero-visual{position:relative}
+.smile-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:0;overflow:hidden;box-shadow:0 30px 70px rgba(13,125,123,.12)}
+.smile-ph{height:300px;background:linear-gradient(135deg,#bfe3e1,#8fc9c6);display:grid;place-items:center;color:#fff;font-size:4rem;position:relative}
+.smile-ph::after{content:"Bright, calm, modern — photo of our reception";position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:.75rem;color:rgba(255,255,255,.85);font-family:var(--font-body)}
+.smile-body{padding:28px 30px}
+.smile-body h3{font-size:1.25rem;margin-bottom:6px}
+.smile-body p{color:var(--muted);font-size:.94rem;margin-bottom:16px}
+.float-note{position:absolute;bottom:-22px;left:-16px;background:var(--ink);color:#fff;border-radius:14px;padding:14px 20px;font-size:.88rem;box-shadow:0 16px 36px rgba(0,0,0,.2)}
+.float-note strong{color:#7ee8e5}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(13,125,123,.12)}
+.svc .icon{font-size:2rem;margin-bottom:16px}
+.svc h3{font-size:1.15rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.93rem}
+/* team */
+.team{background:#fff}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.member{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center}
+.member .ph{height:230px;background:linear-gradient(135deg,#d9efed,#b3dcd9);display:grid;place-items:center;font-size:3.4rem;color:#fff}
+.member .info{padding:24px}
+.member h3{font-size:1.2rem;margin-bottom:4px}
+.member .role{color:var(--teal);font-weight:600;font-size:.9rem;margin-bottom:8px}
+.member p{color:var(--muted);font-size:.9rem}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal{aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(135deg,#cfe9e7,#a9d4d1);display:grid;place-items:center;color:#fff;font-size:2.2rem;position:relative;overflow:hidden}
+.gal::after{content:"Smile photo";position:absolute;bottom:10px;font-size:.7rem;color:rgba(255,255,255,.9)}
+/* booking */
+.book{background:var(--teal);color:#fff;border-radius:28px;padding:64px;margin:0 24px;max-width:1120px;margin-left:auto;margin-right:auto}
+.book h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:10px}
+.book p{color:#cdeeea;margin-bottom:28px;max-width:520px}
+.book-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px}
+.book-form input,.book-form select{padding:14px 16px;border:none;border-radius:12px;font-family:inherit;font-size:.96rem}
+.book-form .full{grid-column:1/-1}
+.book-form button{grid-column:1/-1;background:var(--ink);color:#fff;font-weight:700;font-size:1.02rem;padding:16px;border:none;border-radius:12px;cursor:pointer}
+.book-form button:hover{background:#0f1d1c}
+#bookMsg{display:none;grid-column:1/-1;background:rgba(255,255,255,.15);border-radius:12px;padding:14px;text-align:center;font-weight:600}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px}
+.testi .stars{color:#eab308;letter-spacing:3px;margin-bottom:12px}
+.testi blockquote{font-size:.97rem;margin-bottom:14px}
+.testi .who{font-weight:600;font-size:.9rem;color:var(--muted)}
+/* hours/location */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+.hours td{padding:13px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours tr:last-child td{border-bottom:none}
+.hours td:last-child{text-align:right;font-weight:600}
+.addr-card{background:var(--teal-soft);border-radius:var(--radius);padding:28px;margin-top:14px}
+.addr-card p{margin:6px 0}
+/* footer */
+footer{background:var(--ink);color:#9db5b3;padding:52px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-grid h4{color:#fff;font-family:var(--font-head);margin-bottom:12px}
+.foot-grid a{color:#9db5b3;text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem}
+.sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(28,43,42,.98)}
+.sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:#fff;font-weight:700;font-size:1.02rem;padding:15px;border-radius:12px;text-decoration:none}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .float-note{left:8px}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  section{padding:64px 0}
+  .svc-grid,.team-grid,.testi-grid{grid-template-columns:1fr}
+  .book{margin:0 12px;padding:44px 24px}
+  .book-form{grid-template-columns:1fr}
+  .sticky-call{display:block}
+  body{padding-bottom:78px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">🦷</span><span class="brand-name">Hartstone<small>DENTAL</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <a class="nav-cta" href="#book">Book a Visit</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a><a href="#team">Team</a><a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a><a href="#book">Book a Visit</a>
+  </div>
+</header>
+
+<!-- CMS-EDITABLE: hero -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Middleton, WI · Accepting new patients</span>
+      <h1>Dentistry that feels <em>nothing</em> like the dentist.</h1>
+      <p class="lead">A calm, modern office, honest pricing, and appointments that run on time. Cleanings, cosmetic work, implants, and same-day emergency care.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#book">Book Online</a>
+        <a class="btn btn-ghost" href="tel:+16085550152">Call (608) 555-0152</a>
+      </div>
+      <div class="hero-proof">
+        <span>⭐ <strong>5.0</strong> · 200+ reviews</span>
+        <span>🦷 <strong>In-network</strong> with most plans</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="smile-card">
+        <div class="smile-ph">🦷</div>
+        <div class="smile-body">
+          <h3>New-patient special</h3>
+          <p>Exam, cleaning &amp; x-rays — one visit, one clear price.</p>
+          <a class="btn btn-primary" href="#book" style="padding:12px 26px;font-size:.95rem">Claim the Special</a>
+        </div>
+      </div>
+      <div class="float-note"><strong>Same-day</strong> emergency appointments</div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Services</span>
+      <h2>Complete care under one roof</h2>
+      <p>From six-month cleanings to full smile makeovers — no referrals across town.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="icon">✨</div><h3>Cleanings &amp; Exams</h3><p>Gentle hygiene visits with digital x-rays and a no-lecture approach.</p></div>
+      <div class="svc"><div class="icon">😁</div><h3>Cosmetic Dentistry</h3><p>Whitening, veneers, and bonding designed around your face, not a template.</p></div>
+      <div class="svc"><div class="icon">🔩</div><h3>Implants</h3><p>Permanent tooth replacement planned and placed in-house, start to finish.</p></div>
+      <div class="svc"><div class="icon">🚨</div><h3>Emergency Care</h3><p>Toothache, chip, or knock-out — same-day appointments, real relief fast.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: team -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Meet the team</span>
+      <h2>People you'll actually like seeing</h2>
+      <p>Small team, long tenures, zero turnover drama.</p>
+    </div>
+    <div class="team-grid">
+      <div class="member"><div class="ph">👩‍⚕️</div><div class="info"><h3>Dr. Name Here</h3><div class="role">Lead Dentist</div><p>UW-Madison trained. Believes nobody should dread the dentist.</p></div></div>
+      <div class="member"><div class="ph">🧑‍⚕️</div><div class="info"><h3>Dr. Name Here</h3><div class="role">Associate Dentist</div><p>Cosmetic focus. Marathon runner, terrible golfer.</p></div></div>
+      <div class="member"><div class="ph">👩‍💼</div><div class="info"><h3>Name Here</h3><div class="role">Hygienist</div><p>The gentle cleaning people write reviews about.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: gallery -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Smile gallery</span>
+      <h2>Real patients, real results</h2>
+      <p>Before-and-after photos from actual cases (shared with permission).</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal">😁</div><div class="gal">😃</div><div class="gal">🙂</div><div class="gal">😄</div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: booking -->
+<section style="padding-top:0">
+  <div class="book" id="book">
+    <span class="eyebrow" style="color:#7ee8e5">Book online</span>
+    <h2>Request your appointment</h2>
+    <p>Pick a time that works — we'll confirm within one business day. New patients welcome.</p>
+    <form class="book-form" id="bookForm" novalidate>
+      <input type="text" id="bName" placeholder="Full name" required>
+      <input type="tel" id="bPhone" placeholder="Phone" required>
+      <select id="bType" class="full">
+        <option>Cleaning &amp; exam</option><option>Cosmetic consult</option>
+        <option>Emergency / tooth pain</option><option>Something else</option>
+      </select>
+      <select id="bWhen">
+        <option>Morning</option><option>Afternoon</option><option>Evening</option>
+      </select>
+      <select id="bDay">
+        <option>Mon</option><option>Tue</option><option>Wed</option><option>Thu</option><option>Fri</option>
+      </select>
+      <button type="submit">Request Appointment →</button>
+      <div id="bookMsg">✓ Thanks! We'll confirm your appointment shortly.</div>
+    </form>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: testimonials -->
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reviews</span>
+      <h2>What Middleton says</h2>
+      <p>5.0 stars across 200+ reviews.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"I used to white-knuckle every dental visit. Here I nearly fell asleep during a filling. Unreal."</blockquote><div class="who">— Sarah M.</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"Chipped a tooth Saturday morning, seen by noon. They treat emergencies like emergencies."</blockquote><div class="who">— James L.</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"Upfront pricing, on-time appointments, and they remember my kids' names. We've found our dentist."</blockquote><div class="who">— The Nguyen Family</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: visit — hours, address -->
+<section id="visit" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Visit us</span>
+      <h2>Easy to find, easy to park</h2>
+    </div>
+    <div class="info-grid">
+      <div>
+        <h3>Hours</h3>
+        <table class="hours">
+          <tr><td>Monday – Thursday</td><td>8:00 AM – 5:00 PM</td></tr>
+          <tr><td>Friday</td><td>8:00 AM – 2:00 PM</td></tr>
+          <tr><td>Saturday – Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <div class="addr-card">
+          <p><strong>Hartstone Dental</strong></p>
+          <p>1001 N Gammon Rd, Suite 2<br>Middleton, WI 53562</p>
+          <p>📞 <a href="tel:+16085550152" style="color:var(--teal);font-weight:700">(608) 555-0152</a></p>
+          <p style="margin-top:10px"><a class="btn btn-primary" href="#book" style="padding:12px 26px;font-size:.95rem">Book Online</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Hartstone Dental</h4>
+        <p style="font-size:.93rem">Modern family dentistry in Middleton, WI.<br>📞 <a href="tel:+16085550152" style="display:inline;color:#fff;font-weight:700">(608) 555-0152</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Cleanings &amp; Exams</a><a href="#services">Cosmetic Dentistry</a>
+        <a href="#services">Implants</a><a href="#services">Emergency Care</a>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <a href="#team">Meet the Team</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; Location</a><a href="#book">Book Online</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Hartstone Dental (demo site — fictional content)</span>
+      <span>Privacy · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="#book">📅 Book a Visit</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var ham=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
+  ham.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  var form=document.getElementById('bookForm'),msg=document.getElementById('bookMsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('bName'),p=document.getElementById('bPhone'),ok=true;
+    [n,p].forEach(function(el){if(!el.value.trim()){el.style.outline='2px solid #dc2626';ok=false;}else{el.style.outline='';}});
+    if(!ok)return;
+    msg.style.display='block';
+    form.querySelector('button').disabled=true;
+  });
+})();
+</script>
+</body>
+</html>
