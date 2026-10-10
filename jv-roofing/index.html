@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&V Roofing LLC — Madison, WI | Roof Replacements & Repairs</title>
+<meta name="description" content="J&V Roofing LLC — CertainTeed certified roofing contractor in Madison, WI. Free quotes, roof replacements, repairs, gutters, storm damage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --char:#17181c; --char-2:#23252c; --orange:#ff6b1a; --orange-d:#e05a0e;
+  --bg:#f6f6f7; --card:#fff; --line:#e4e4e7; --ink:#17181c; --muted:#5f626e;
+  --radius:14px; --font-head:'Archivo',sans-serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-family:var(--font-head);font-size:.74rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-d);margin-bottom:12px}
+.sec-head{max-width:640px;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:1rem;padding:15px 32px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none}
+.btn-primary{background:var(--orange);color:#1c1005;box-shadow:0 10px 26px rgba(255,107,26,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(255,107,26,.45)}
+.btn-dark{background:var(--char);color:#fff}
+.btn-dark:hover{background:var(--char-2)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(23,24,28,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand-mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-d));display:grid;place-items:center;font-family:var(--font-head);font-weight:900;color:#1c1005;flex:none}
+.brand-name{font-family:var(--font-head);font-weight:800;font-size:1.15rem}
+.brand-name small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.24em;color:#9a9daa}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#d7d8de;text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#1c1005;font-family:var(--font-head);font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;font-size:.92rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;margin:5px 0}
+.mobile-menu{display:none;background:var(--char-2);padding:12px 24px 24px}
+.mobile-menu a{display:block;color:#d7d8de;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:500}
+.mobile-menu.open{display:block}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--char) 0%,var(--char-2) 70%,#2b2e37 100%);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 340px at 85% 5%,rgba(255,107,26,.18),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:900;letter-spacing:-.5px;margin:14px 0 18px}
+.hero h1 .hl{color:var(--orange)}
+.hero p.lead{color:#b9bac2;font-size:1.12rem;max-width:520px;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.cert-strip{display:flex;gap:12px;flex-wrap:wrap}
+.cert{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 18px;font-size:.84rem;font-weight:600;color:#e8e8ec}
+.quote-card{background:#fff;color:var(--ink);border-radius:20px;padding:38px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.quote-card h3{font-size:1.35rem;margin-bottom:6px}
+.quote-card p.sub{color:var(--muted);font-size:.93rem;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#quoteMsg{display:none;background:#dcfce7;color:#15803d;font-weight:600;border-radius:10px;padding:14px;text-align:center;margin-top:6px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.1)}
+.svc .icon{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#ffe8d6,#ffd0a8);display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px}
+.svc h3{font-size:1.12rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.93rem}
+/* certs band */
+.certs{background:var(--char);color:#fff}
+.certs .sec-head h2{color:#fff}
+.certs .sec-head p{color:#9a9daa}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cert-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px 28px;text-align:center}
+.cert-card .big{font-size:2.6rem;margin-bottom:10px}
+.cert-card h3{font-size:1.05rem;margin-bottom:6px}
+.cert-card p{color:#9a9daa;font-size:.9rem}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gal{border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#3a3d46,#23252c);aspect-ratio:4/3;display:grid;place-items:center;color:#fff;position:relative}
+.gal span.ph{font-size:3rem;opacity:.5}
+.gal .cap{position:absolute;bottom:0;left:0;right:0;padding:28px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-weight:600;font-size:.92rem}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px}
+.testi .stars{color:var(--orange-d);letter-spacing:3px;margin-bottom:12px}
+.testi blockquote{font-size:.97rem;margin-bottom:14px}
+.testi .who{font-weight:600;font-size:.9rem;color:var(--muted)}
+/* process strip */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;position:relative}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--font-head);font-weight:900;font-size:2.2rem;color:transparent;-webkit-text-stroke:1.5px var(--orange);display:block;margin-bottom:10px}
+.step h3{font-size:1.05rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.92rem}
+/* footer */
+footer{background:var(--char);color:#9a9daa;padding:56px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-grid h4{color:#fff;font-family:var(--font-head);margin-bottom:12px}
+.foot-grid a{color:#9a9daa;text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem}
+.sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(23,24,28,.98)}
+.sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:#1c1005;font-family:var(--font-head);font-weight:800;font-size:1.02rem;padding:15px;border-radius:12px;text-decoration:none}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid,.testi-grid,.steps{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  section{padding:64px 0}
+  .svc-grid,.cert-grid,.testi-grid,.steps{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .quote-card{padding:28px 22px}
+  .sticky-call{display:block}
+  body{padding-bottom:78px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">JV</span><span class="brand-name">J&amp;V<small>ROOFING LLC</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="#services">Services</a></li><li><a href="#certs">Why Us</a></li>
+      <li><a href="#work">Our Work</a></li><li><a href="#reviews">Reviews</a></li>
+    </ul></nav>
+    <a class="nav-cta" href="#quote">Free Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a><a href="#certs">Why Us</a><a href="#work">Our Work</a>
+    <a href="#reviews">Reviews</a><a href="#quote">Free Quote</a>
+  </div>
+</header>
+
+<!-- CMS-EDITABLE: hero + quote form -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--orange)">CertainTeed certified · Madison, WI</span>
+      <h1>A roof you <span class="hl">stop thinking about.</span></h1>
+      <p class="lead">12 years, hundreds of Dane County roofs. Replacements, repairs, gutters, and storm damage — done once, done right, backed in writing.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#quote">Get My Free Quote</a>
+        <a class="btn btn-dark" href="tel:+16085550163">📞 (608) 555-0163</a>
+      </div>
+      <div class="cert-strip">
+        <span class="cert">✓ CertainTeed Certified</span>
+        <span class="cert">⭐ 4.8 · 55 reviews</span>
+        <span class="cert">🛡️ Licensed &amp; Insured</span>
+      </div>
+    </div>
+    <div class="quote-card" id="quote">
+      <h3>Free roof quote</h3>
+      <p class="sub">Answer 4 quick questions — we'll call back within one business day.</p>
+      <form id="quoteForm" novalidate>
+        <div class="field"><label for="qName">Name</label><input id="qName" type="text" placeholder="Jane Miller" required></div>
+        <div class="field-row">
+          <div class="field"><label for="qPhone">Phone</label><input id="qPhone" type="tel" placeholder="(608) 555-0100" required></div>
+          <div class="field"><label for="qAddr">Street address</label><input id="qAddr" type="text" placeholder="123 Main St, Madison" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="qAge">Roof age</label>
+            <select id="qAge"><option>Not sure</option><option>Under 10 years</option><option>10–20 years</option><option>Over 20 years</option></select></div>
+          <div class="field"><label for="qIssue">What's going on?</label>
+            <select id="qIssue"><option>Just getting quotes</option><option>Active leak</option><option>Storm / hail damage</option><option>Missing shingles</option><option>New gutters</option></select></div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Get My Free Quote →</button>
+        <div id="quoteMsg">✓ Got it! We'll call you back within one business day.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Services</span>
+      <h2>Everything above your walls</h2>
+      <p>Residential roofing, done by a crew that does nothing else.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="icon">🏠</div><h3>Roof Replacements</h3><p>Full tear-off and install with CertainTeed shingles. Most homes done in 1–2 days.</p></div>
+      <div class="svc"><div class="icon">🔨</div><h3>Repairs</h3><p>Leaks, flashing, vents, and problem spots — fixed before they become replacements.</p></div>
+      <div class="svc"><div class="icon">🌧️</div><h3>Gutters</h3><p>Seamless gutters and guards that actually move water away from your foundation.</p></div>
+      <div class="svc"><div class="icon">⛈️</div><h3>Storm Damage</h3><p>Hail and wind assessments, insurance paperwork help, and fast emergency tarping.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: certifications -->
+<section class="certs" id="certs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why J&amp;V</span>
+      <h2>Certified. Insured. Accountable.</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="big">🏅</div><h3>CertainTeed Certified</h3><p>Factory-trained installers — which means stronger warranties than the other guys can offer.</p></div>
+      <div class="cert-card"><div class="big">📋</div><h3>Licensed &amp; Insured</h3><p>Full liability and workers' comp. Certificates available before we ever climb a ladder.</p></div>
+      <div class="cert-card"><div class="big">✍️</div><h3>Written Warranty</h3><p>Workmanship warranty in writing on every job — not a handshake, a document.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: project gallery -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Recent work</span>
+      <h2>Roofs around Dane County</h2>
+      <p>A few recent jobs — every one finished on schedule.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal"><span class="ph">🏠</span><span class="cap">Full replacement · Middleton</span></div>
+      <div class="gal"><span class="ph">🏠</span><span class="cap">Storm repair · Fitchburg</span></div>
+      <div class="gal"><span class="ph">🏠</span><span class="cap">Replacement + gutters · Verona</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: process -->
+<section style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From quote to watertight in 4 steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Free inspection</h3><p>We walk the roof, photograph everything, and explain what we find in plain English.</p></div>
+      <div class="step"><h3>Fixed quote</h3><p>One number, itemized. It doesn't move unless the scope does.</p></div>
+      <div class="step"><h3>1–2 day install</h3><p>Certified crew, full cleanup, magnetic nail sweep of your yard.</p></div>
+      <div class="step"><h3>Warranty</h3><p>Workmanship warranty in writing, plus manufacturer coverage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: testimonials -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reviews</span>
+      <h2>4.8 stars, earned one roof at a time</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"Two other companies quoted me a full replacement. J&V found the actual leak, fixed it for a tenth of the price, and told me my roof had years left. Honest."</blockquote><div class="who">— Tom R., Madison</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"Hail damage in June, new roof by July. They handled the insurance adjuster meeting for us. Crew was gone by 4 PM both days and the yard was spotless."</blockquote><div class="who">— Alicia W., Fitchburg</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><blockquote>"Got three quotes. J&V wasn't the cheapest — they were the only ones who got on the roof before quoting. That told me everything."</blockquote><div class="who">— Greg H., Middleton</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>J&amp;V Roofing LLC</h4>
+        <p style="font-size:.93rem">CertainTeed certified · Licensed &amp; insured<br>📞 <a href="tel:+16085550163" style="display:inline;color:#fff;font-weight:700">(608) 555-0163</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Roof Replacements</a><a href="#services">Repairs</a>
+        <a href="#services">Gutters</a><a href="#services">Storm Damage</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#certs">Why J&amp;V</a><a href="#work">Our Work</a><a href="#reviews">Reviews</a><a href="#quote">Free Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 J&amp;V Roofing LLC (demo site — fictional content)</span>
+      <span>Madison, WI</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="#quote">📋 Get a Free Quote</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var ham=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
+  ham.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  var form=document.getElementById('quoteForm'),msg=document.getElementById('quoteMsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    ['qName','qPhone','qAddr'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(!el.value.trim()){el.style.borderColor='#dc2626';ok=false;}else{el.style.borderColor='';}
+    });
+    if(!ok)return;
+    msg.style.display='block';
+    form.querySelector('button[type=submit]').disabled=true;
+  });
+})();
+</script>
+</body>
+</html>
