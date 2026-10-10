@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prairie Cafe & Bakery — Middleton, WI | Breakfast, Lunch & Fresh Baking</title>
+<meta name="description" content="Prairie Cafe & Bakery in Middleton, WI. Scratch breakfast and lunch, fresh-baked breads and pastries daily. Catering available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ec; --cream-2:#f3e9d7; --brown:#4a3220; --brown-soft:#7a5c3e;
+  --gold:#c98f2d; --gold-soft:#f5e3bd; --ink:#2e2115; --muted:#7d6a55;
+  --card:#fffdf8; --line:#e8dcc4; --radius:16px;
+  --font-head:'Fraunces',serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2;font-weight:600}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sec-head{max-width:620px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.04rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;padding:15px 32px;border-radius:999px;text-decoration:none;transition:transform .15s;cursor:pointer;border:none}
+.btn-primary{background:var(--brown);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);background:#3a2718}
+.btn-gold{background:var(--gold);color:#2e2115;font-weight:700}
+.btn-gold:hover{transform:translateY(-2px)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(250,245,236,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#a86f1c);display:grid;place-items:center;font-size:1.5rem;flex:none}
+.brand-name{font-family:var(--font-head);font-weight:700;font-size:1.2rem;line-height:1.15}
+.brand-name small{display:block;font-family:var(--font-body);font-size:.64rem;font-weight:600;letter-spacing:.28em;color:var(--muted)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--brown);color:#fff;font-weight:600;padding:12px 24px;border-radius:999px;text-decoration:none;font-size:.93rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:var(--ink);border-radius:2px;margin:5px 0}
+.mobile-menu{display:none;background:var(--cream);border-top:1px solid var(--line);padding:8px 24px 20px}
+.mobile-menu a{display:block;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);font-weight:500}
+.mobile-menu.open{display:block}
+/* hero */
+.hero{padding:110px 0;background:
+  radial-gradient(600px 300px at 15% 20%,rgba(201,143,45,.14),transparent 60%),
+  linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);text-align:center;overflow:hidden}
+.hero .eyebrow{margin-bottom:14px}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-.5px;max-width:760px;margin:0 auto 18px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{color:var(--muted);font-size:1.14rem;max-width:560px;margin:0 auto 32px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.hero-meta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:var(--muted);font-size:.93rem}
+.hero-meta strong{color:var(--ink)}
+.fresh-strip{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.fresh{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 20px;font-size:.88rem;font-weight:600;color:var(--brown-soft)}
+/* menu */
+.menu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.tab{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:11px 26px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;color:var(--ink)}
+.tab.active{background:var(--brown);color:#fff;border-color:var(--brown)}
+.menu-panel{display:none}
+.menu-panel.active{display:block}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 48px}
+.dish{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px dotted var(--line)}
+.dish .name{font-weight:600}
+.dish .name small{display:block;font-weight:400;color:var(--muted);font-size:.86rem;margin-top:2px}
+.dish .price{font-family:var(--font-head);font-weight:700;color:var(--brown);white-space:nowrap}
+/* story */
+.story{background:var(--brown);color:#f3e9d7;border-radius:28px;padding:64px;margin:0 24px;max-width:1100px;margin-left:auto;margin-right:auto}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:16px}
+.story p{color:#d9c8ab;margin-bottom:14px}
+.story .sig{font-family:var(--font-head);font-style:italic;font-size:1.2rem;color:var(--gold-soft);margin-top:18px}
+.story-ph{height:340px;border-radius:18px;background:linear-gradient(135deg,#8a6a45,#5c422a);display:grid;place-items:center;font-size:4rem;color:rgba(255,255,255,.5);position:relative;overflow:hidden}
+.story-ph::after{content:"The bakery at 5 AM — photo";position:absolute;bottom:12px;font-size:.72rem;color:rgba(255,255,255,.7);font-family:var(--font-body)}
+/* catering */
+.cater{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.cater-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:40px 36px;text-align:center}
+.cater-card h3{font-size:1.4rem;margin-bottom:10px}
+.cater-card p{color:var(--muted);margin-bottom:20px}
+/* visit */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+.hours td{padding:13px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours tr:last-child td{border-bottom:none}
+.hours td:last-child{text-align:right;font-weight:600}
+.addr-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin-top:14px}
+.addr-card p{margin:6px 0}
+/* footer */
+footer{background:var(--brown);color:#c9b294;padding:52px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-grid h4{color:#fff;font-family:var(--font-head);margin-bottom:12px}
+.foot-grid a{color:#c9b294;text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem}
+.sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(74,50,32,.98)}
+.sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#2e2115;font-weight:700;font-size:1.02rem;padding:15px;border-radius:12px;text-decoration:none}
+@media(max-width:960px){
+  .menu-grid{grid-template-columns:1fr}
+  .story-grid,.cater,.info-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  section{padding:64px 0}
+  .story{margin:0 12px;padding:44px 26px}
+  .sticky-call{display:block}
+  body{padding-bottom:78px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">🥐</span><span class="brand-name">Prairie Cafe<small>&amp; BAKERY</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="#menu">Menu</a></li><li><a href="#story">Our Story</a></li>
+      <li><a href="#catering">Catering</a></li><li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <a class="nav-cta" href="#visit">Hours &amp; Location</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#catering">Catering</a><a href="#visit">Visit</a>
+  </div>
+</header>
+
+<!-- CMS-EDITABLE: hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Middleton, WI · Baking since 2008</span>
+    <h1>Breakfast worth <em>slowing down</em> for.</h1>
+    <p class="lead">Scratch-made breakfast and lunch, bread from our own ovens, and a bakery case that regulars plan their mornings around.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#menu">See the Menu</a>
+      <a class="btn btn-gold" href="#catering">Order Catering</a>
+    </div>
+    <div class="hero-meta">
+      <span>⭐ <strong>4.6</strong> · 300+ reviews</span>
+      <span>🕖 <strong>Open daily</strong> 7 AM – 2 PM</span>
+    </div>
+    <div class="fresh-strip">
+      <span class="fresh">🥖 Sourdough daily</span>
+      <span class="fresh">🥧 Pie Fridays</span>
+      <span class="fresh">☕ Locally roasted coffee</span>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: menu — dishes, prices -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The menu</span>
+      <h2>Made from scratch, priced like a neighbor</h2>
+      <p>Everything below is baked or cooked in-house. Menu changes with the seasons.</p>
+    </div>
+    <div class="menu-tabs" role="tablist">
+      <button class="tab active" data-tab="breakfast">Breakfast</button>
+      <button class="tab" data-tab="lunch">Lunch</button>
+      <button class="tab" data-tab="bakery">Bakery Case</button>
+    </div>
+
+    <div class="menu-panel active" id="tab-breakfast">
+      <div class="menu-grid">
+        <div class="dish"><div class="name">Prairie Skillet<small>Two eggs, potatoes, peppers, cheddar, sourdough toast</small></div><div class="price">$11.50</div></div>
+        <div class="dish"><div class="name">Buttermilk Pancakes<small>Stack of three, whipped butter, real maple syrup</small></div><div class="price">$9.75</div></div>
+        <div class="dish"><div class="name">Breakfast Sandwich<small>Fried egg, ham, cheddar on a fresh-baked croissant</small></div><div class="price">$8.25</div></div>
+        <div class="dish"><div class="name">Veggie Hash<small>Roasted sweet potato, kale, poached eggs, herb oil</small></div><div class="price">$10.50</div></div>
+        <div class="dish"><div class="name">Oatmeal Brûlée<small>Steel-cut oats, torched sugar crust, berries</small></div><div class="price">$7.50</div></div>
+        <div class="dish"><div class="name">Biscuits &amp; Gravy<small>House buttermilk biscuits, sausage gravy</small></div><div class="price">$9.25</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-lunch">
+      <div class="menu-grid">
+        <div class="dish"><div class="name">Turkey &amp; Brie<small>Roast turkey, brie, apple, honey mustard on sourdough</small></div><div class="price">$11.95</div></div>
+        <div class="dish"><div class="name">Prairie Burger<small>Half-pound patty, cheddar, pickles, house sauce, fries</small></div><div class="price">$12.50</div></div>
+        <div class="dish"><div class="name">Harvest Salad<small>Greens, roasted squash, candied pecans, cider vinaigrette</small></div><div class="price">$10.75</div></div>
+        <div class="dish"><div class="name">Soup of the Day<small>Always from scratch — ask what's simmering</small></div><div class="price">$6.50</div></div>
+        <div class="dish"><div class="name">Grilled Cheese Deluxe<small>Three cheeses, tomato jam on sourdough + soup</small></div><div class="price">$10.25</div></div>
+        <div class="dish"><div class="name">Chicken Pot Pie<small>The Friday legend — sells out by noon</small></div><div class="price">$11.25</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-bakery">
+      <div class="menu-grid">
+        <div class="dish"><div class="name">Sourdough Loaf<small>Baked daily at 6 AM</small></div><div class="price">$7.00</div></div>
+        <div class="dish"><div class="name">Butter Croissant<small>Laminated over three days</small></div><div class="price">$3.75</div></div>
+        <div class="dish"><div class="name">Cinnamon Roll<small>Brown-butter frosting, Saturday only</small></div><div class="price">$4.50</div></div>
+        <div class="dish"><div class="name">Fruit Pie Slice<small>Rotating seasonal fruit</small></div><div class="price">$5.25</div></div>
+        <div class="dish"><div class="name">Morning Bun<small>Orange-cardamom, our signature</small></div><div class="price">$4.25</div></div>
+        <div class="dish"><div class="name">Cookies<small>Chocolate chip, oatmeal, or snickerdoodle</small></div><div class="price">$2.75</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: story -->
+<section style="padding-top:0">
+  <div class="story" id="story">
+    <div class="story-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold-soft)">Our story</span>
+        <h2>The regulars were here first</h2>
+        <p>We opened in 2008 with one oven, four tables, and a sourdough starter named Doug. The tables multiplied. Doug is still here.</p>
+        <p>Everything is made in-house because that's the only way we know. The bread, the jam, the pie crust — if it's on your plate, someone in our kitchen made it this morning.</p>
+        <div class="sig">— The Prairie family</div>
+      </div>
+      <div class="story-ph">🥖</div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: catering -->
+<section id="catering" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Catering</span>
+      <h2>Feed the whole office</h2>
+    </div>
+    <div class="cater">
+      <div class="cater-card">
+        <h3>🥐 Breakfast Boxes</h3>
+        <p>Pastries, fruit, and coffee for 10–50 people. 48-hour notice.</p>
+        <a class="btn btn-primary" href="tel:+16085550174">Call to Order</a>
+      </div>
+      <div class="cater-card">
+        <h3>🥪 Lunch Platters</h3>
+        <p>Sandwiches, salads, and cookies for meetings that need saving.</p>
+        <a class="btn btn-primary" href="tel:+16085550174">Call to Order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: visit — hours, address -->
+<section id="visit" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Visit</span>
+      <h2>Come hungry</h2>
+    </div>
+    <div class="info-grid">
+      <div>
+        <h3>Hours</h3>
+        <table class="hours">
+          <tr><td>Monday – Friday</td><td>7:00 AM – 2:00 PM</td></tr>
+          <tr><td>Saturday – Sunday</td><td>8:00 AM – 2:00 PM</td></tr>
+        </table>
+        <p style="margin-top:12px;color:var(--muted);font-size:.92rem">Bakery case sells out most days by noon — come early.</p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <div class="addr-card">
+          <p><strong>Prairie Cafe &amp; Bakery</strong></p>
+          <p>3109 Pheasant Branch Rd<br>Middleton, WI 53562</p>
+          <p>📞 <a href="tel:+16085550174" style="color:var(--brown);font-weight:700">(608) 555-0174</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Prairie Cafe &amp; Bakery</h4>
+        <p style="font-size:.93rem">Scratch cooking and baking in Middleton since 2008.<br>📞 <a href="tel:+16085550174" style="display:inline;color:#fff;font-weight:700">(608) 555-0174</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#catering">Catering</a>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <a href="#visit">Hours &amp; Location</a><a href="#visit">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Prairie Cafe &amp; Bakery (demo site — fictional content)</span>
+      <span>Middleton, WI</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="tel:+16085550174">📞 Call to Order</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var ham=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
+  ham.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      tabs.forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>
