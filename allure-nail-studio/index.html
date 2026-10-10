@@ -708,7 +708,7 @@ const SERVICES_DATA = [
     services: [
       { name: "Full Set Acrylic", price: "70+", note: "Sculpted to your ideal length" },
       { name: "Acrylic Fill", price: 50, note: "Refresh & rebalance, 2–3 weeks" },
-      { name: "Nail Art", price: "from 10", note: "Per nail, hand-painted designs" }
+      { name: "Nail Art", price: "10", pricePrefix: "from ", note: "Per nail, hand-painted designs" }
     ]
   }
 ];
@@ -731,7 +731,7 @@ const TIME_SLOTS = ["9:00 AM","10:30 AM","12:00 PM","1:30 PM","3:00 PM","4:30 PM
     var items = cat.services.map(function (s) {
       return '<li><span class="name">' + s.name +
         (s.note ? "<small>" + s.note + "</small>" : "") +
-        '</span><span class="price">$' + s.price + "</span></li>";
+        '</span><span class="price">' + (s.pricePrefix || "") + "$" + s.price + "</span></li>";
     }).join("");
     card.innerHTML = "<h3>" + cat.category + "</h3>" +
       '<p class="card-note">' + cat.blurb + "</p>" +
@@ -740,7 +740,7 @@ const TIME_SLOTS = ["9:00 AM","10:30 AM","12:00 PM","1:30 PM","3:00 PM","4:30 PM
     cat.services.forEach(function (s) {
       var opt = document.createElement("option");
       opt.value = s.name;
-      opt.textContent = s.name + " — $" + s.price;
+      opt.textContent = s.name + " — " + (s.pricePrefix || "") + "$" + s.price;
       serviceSelect.appendChild(opt);
     });
   });
