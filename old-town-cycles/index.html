@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old Town Cycles — Madison, WI | Repairs, Tune-Ups, Bike Fitting</title>
+<meta name="description" content="Old Town Cycles — Madison's neighborhood bike shop. Repairs with honest prices, tune-up packages, professional bike fitting, and rentals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#16a34a; --green-d:#15803d; --green-soft:#e8f7ee; --graph:#1b1e17; --graph-2:#262a22;
+  --bg:#f7faf7; --card:#fff; --line:#e2eae2; --ink:#1b1e17; --muted:#5d6a5d;
+  --radius:14px; --font-head:'Archivo',sans-serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-family:var(--font-head);font-size:.74rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--green-d);margin-bottom:12px}
+.sec-head{max-width:640px;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:1rem;padding:15px 32px;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 26px rgba(22,163,74,.3)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--green-d)}
+.btn-dark{background:var(--graph);color:#fff}
+.btn-dark:hover{background:var(--graph-2)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(27,30,23,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--green-d));display:grid;place-items:center;font-size:1.4rem;flex:none}
+.brand-name{font-family:var(--font-head);font-weight:800;font-size:1.15rem}
+.brand-name small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.24em;color:#9db3a0}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#d5ddd5;text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--green);color:#fff;font-family:var(--font-head);font-weight:700;padding:11px 22px;border-radius:999px;text-decoration:none;font-size:.92rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;margin:5px 0}
+.mobile-menu{display:none;background:var(--graph-2);padding:12px 24px 24px}
+.mobile-menu a{display:block;color:#d5ddd5;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:500}
+.mobile-menu.open{display:block}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--graph) 0%,var(--graph-2) 65%,#2f3a2a 100%);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 340px at 82% 8%,rgba(22,163,74,.2),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:900;letter-spacing:-.5px;margin:14px 0 18px}
+.hero h1 .hl{color:#4ade80}
+.hero p.lead{color:#b7c4b7;font-size:1.12rem;max-width:520px;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.hero-proof{display:flex;gap:26px;flex-wrap:wrap;color:#b7c4b7;font-size:.93rem}
+.hero-proof strong{color:#fff}
+.tune-card{background:#fff;color:var(--ink);border-radius:20px;padding:0;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.tune-head{background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;padding:26px 32px}
+.tune-head h3{font-size:1.3rem;margin-bottom:4px}
+.tune-head p{font-size:.9rem;opacity:.9}
+.tune-list{list-style:none;padding:8px 32px 8px}
+.tune-list li{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.tune-list li:last-child{border-bottom:none}
+.tune-list .price{font-family:var(--font-head);font-weight:800;color:var(--green-d);white-space:nowrap}
+.tune-foot{padding:20px 32px 28px}
+.tune-foot .btn{width:100%;justify-content:center}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(22,163,74,.12)}
+.svc .icon{font-size:2.1rem;margin-bottom:16px}
+.svc h3{font-size:1.2rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.94rem;margin-bottom:14px}
+.svc .from{font-family:var(--font-head);font-weight:700;color:var(--green-d)}
+/* repair price list */
+.price-panel{background:var(--graph);color:#fff;border-radius:20px;padding:48px;max-width:760px;margin:0 auto}
+.price-panel h3{font-size:1.5rem;margin-bottom:6px}
+.price-panel p.sub{color:#9db3a0;margin-bottom:24px}
+.plist{list-style:none}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.97rem}
+.plist li:last-child{border-bottom:none}
+.plist .p{font-family:var(--font-head);font-weight:800;color:#4ade80;white-space:nowrap}
+/* fitting + rentals */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:40px 36px}
+.feat .icon{font-size:2.4rem;margin-bottom:16px}
+.feat h3{font-size:1.35rem;margin-bottom:10px}
+.feat p{color:var(--muted);margin-bottom:18px}
+.feat ul{list-style:none;margin-bottom:20px;display:grid;gap:8px}
+.feat ul li{color:var(--muted);font-size:.94rem;padding-left:26px;position:relative}
+.feat ul li::before{content:"✓";position:absolute;left:0;color:var(--green-d);font-weight:800}
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-ph{height:360px;border-radius:20px;background:linear-gradient(135deg,#3d4a35,#232a20);display:grid;place-items:center;font-size:4.5rem;color:rgba(255,255,255,.4);position:relative;overflow:hidden}
+.story-ph::after{content:"The shop floor — photo";position:absolute;bottom:12px;font-size:.72rem;color:rgba(255,255,255,.65)}
+/* booking */
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:0 24px 60px rgba(27,30,23,.08)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#dropMsg{display:none;background:#dcfce7;color:#15803d;font-weight:600;border-radius:10px;padding:14px;text-align:center;margin-top:6px}
+/* hours */
+.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+.hours td{padding:13px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours tr:last-child td{border-bottom:none}
+.hours td:last-child{text-align:right;font-weight:600}
+/* footer */
+footer{background:var(--graph);color:#9db3a0;padding:56px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-grid h4{color:#fff;font-family:var(--font-head);margin-bottom:12px}
+.foot-grid a{color:#9db3a0;text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.84rem}
+.sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(27,30,23,.98)}
+.sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.02rem;padding:15px;border-radius:12px;text-decoration:none}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col,.story-grid,.book-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  section{padding:64px 0}
+  .svc-grid{grid-template-columns:1fr}
+  .price-panel{padding:32px 22px}
+  .field-row{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .sticky-call{display:block}
+  body{padding-bottom:78px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">🚲</span><span class="brand-name">OLD TOWN<small>CYCLES</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="#services">Services</a></li><li><a href="#prices">Repair Prices</a></li>
+      <li><a href="#fitting">Fitting &amp; Rentals</a></li><li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <a class="nav-cta" href="#dropoff">Drop Off a Bike</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a><a href="#prices">Repair Prices</a>
+    <a href="#fitting">Fitting &amp; Rentals</a><a href="#visit">Visit</a><a href="#dropoff">Drop Off a Bike</a>
+  </div>
+</header>
+
+<!-- CMS-EDITABLE: hero + tune-up card -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" style="color:#4ade80">Madison's neighborhood bike shop</span>
+      <h1>Your bike, <span class="hl">running like new.</span></h1>
+      <p class="lead">Honest repairs with prices on the wall, pro tune-ups, and a fitting studio that ends knee pain. No bike snobbery — all riders welcome.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#dropoff">Drop Off for Repair</a>
+        <a class="btn btn-dark" href="tel:+16085550185">📞 (608) 555-0185</a>
+      </div>
+      <div class="hero-proof">
+        <span>⭐ <strong>4.7</strong> · neighborhood favorite</span>
+        <span>🔧 <strong>Same-week</strong> turnaround</span>
+      </div>
+    </div>
+    <div class="tune-card">
+      <div class="tune-head">
+        <h3>Tune-Up Packages</h3>
+        <p>Pick your level — every package includes a full safety check.</p>
+      </div>
+      <ul class="tune-list">
+        <li><span><strong>Basic Tune</strong> — adjust brakes &amp; gears, lube chain</span><span class="price">$65</span></li>
+        <li><span><strong>Deluxe Tune</strong> — basic + wheel true, drivetrain deep-clean</span><span class="price">$110</span></li>
+        <li><span><strong>Overhaul</strong> — full teardown, rebuild, new cables &amp; housing</span><span class="price">$225</span></li>
+      </ul>
+      <div class="tune-foot"><a class="btn btn-primary" href="#dropoff">Book a Tune-Up</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Services</span>
+      <h2>The full-service shop</h2>
+      <p>From flat fixes to full builds — if it has two wheels, we speak its language.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="icon">🔧</div><h3>Repairs</h3><p>Flats, brakes, gears, chains — diagnosed honestly, fixed fast. See the price list below.</p><div class="from">Most repairs under $100</div></div>
+      <div class="svc"><div class="icon">⚙️</div><h3>Tune-Up Packages</h3><p>Three levels from basic adjustment to full overhaul. Every bike leaves safer than it arrived.</p><div class="from">from $65</div></div>
+      <div class="svc"><div class="icon">📐</div><h3>Bike Fitting</h3><p>Pro fitting studio: end knee and back pain, unlock free speed. All bike types.</p><div class="from">$150 / 90 min</div></div>
+      <div class="svc"><div class="icon">🚲</div><h3>Rentals</h3><p>City, hybrid, and e-bikes by the day or week. Helmets and locks included.</p><div class="from">from $35/day</div></div>
+      <div class="svc"><div class="icon">🛞</div><h3>Wheel Building</h3><p>Custom hand-built wheels, truing, and hub overhauls by our master wheelbuilder.</p><div class="from">from $40</div></div>
+      <div class="svc"><div class="icon">🧒</div><h3>Kids' Bikes</h3><p>Trade-up program: buy a kids' bike, trade it back for credit when they outgrow it.</p><div class="from">ask in store</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: repair price list -->
+<section id="prices" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="eyebrow">No surprises</span>
+      <h2>Repair prices, on the wall</h2>
+      <p>We publish our labor prices because hiding them is how shops lose trust.</p>
+    </div>
+    <div class="price-panel">
+      <h3>Common repairs <span style="font-weight:400;font-size:.95rem;color:#9db3a0">(labor)</span></h3>
+      <p class="sub">Parts extra at fair retail — we'll always quote before we wrench.</p>
+      <ul class="plist">
+        <li><span>Flat fix (tube included)</span><span class="p">$25</span></li>
+        <li><span>Brake adjustment</span><span class="p">$20</span></li>
+        <li><span>Gear adjustment</span><span class="p">$20</span></li>
+        <li><span>Wheel true</span><span class="p">$25</span></li>
+        <li><span>Chain replacement</span><span class="p">$20</span></li>
+        <li><span>Bottom bracket overhaul</span><span class="p">$55</span></li>
+        <li><span>Headset overhaul</span><span class="p">$45</span></li>
+        <li><span>Tubeless setup (per wheel)</span><span class="p">$30</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: fitting & rentals -->
+<section id="fitting">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Go further</span>
+      <h2>Fitting studio &amp; rentals</h2>
+    </div>
+    <div class="two-col">
+      <div class="feat">
+        <div class="icon">📐</div>
+        <h3>Professional Bike Fitting</h3>
+        <p>90 minutes with a certified fitter. Most riders leave faster <em>and</em> more comfortable.</p>
+        <ul>
+          <li>Saddle, cleat &amp; cockpit optimization</li>
+          <li>Power and comfort balanced for your riding</li>
+          <li>Free follow-up tweak within 60 days</li>
+        </ul>
+        <div style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:var(--green-d)">$150</div>
+      </div>
+      <div class="feat">
+        <div class="icon">🚲</div>
+        <h3>Rentals</h3>
+        <p>Explore Madison's 200+ miles of paths on a well-maintained bike.</p>
+        <ul>
+          <li>City, hybrid &amp; e-bikes</li>
+          <li>Helmet, lock &amp; map included</li>
+          <li>Multi-day discounts</li>
+        </ul>
+        <div style="font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:var(--green-d)">from $35/day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: story -->
+<section style="background:#fff">
+  <div class="wrap story-grid">
+    <div class="story-ph">🚲</div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2 style="font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:16px">The shop the neighborhood built</h2>
+      <p style="color:var(--muted);margin-bottom:14px">Old Town Cycles started as a repair stand in a garage on Johnson Street. Fifteen years later we're still independent, still allergic to upsells, and still the place half the east side brings their bikes.</p>
+      <p style="color:var(--muted)">We stock what we'd ride ourselves, fix what others won't touch, and we'll tell you when your bike doesn't need a thing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CMS-EDITABLE: drop-off form + visit -->
+<section id="dropoff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Skip the line</span>
+      <h2>Schedule a drop-off</h2>
+      <p>Tell us what's wrong — we'll confirm your slot and have a stand ready.</p>
+    </div>
+    <div class="book-grid">
+      <div class="form-card">
+        <form id="dropForm" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="dName">Name</label><input id="dName" type="text" placeholder="Jane Miller" required></div>
+            <div class="field"><label for="dPhone">Phone</label><input id="dPhone" type="tel" placeholder="(608) 555-0100" required></div>
+          </div>
+          <div class="field"><label for="dBike">Bike type</label>
+            <select id="dBike"><option>Road</option><option>Mountain</option><option>Hybrid / commuter</option><option>E-bike</option><option>Kids'</option><option>Other</option></select></div>
+          <div class="field"><label for="dIssue">What's going on?</label>
+            <textarea id="dIssue" rows="4" placeholder="e.g. Gears skipping on the rear cassette…" required></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Schedule Drop-Off →</button>
+          <div id="dropMsg">✓ Got it! We'll confirm your drop-off slot shortly.</div>
+        </form>
+      </div>
+      <div id="visit">
+        <h3 style="margin-bottom:6px">Hours</h3>
+        <table class="hours">
+          <tr><td>Tuesday – Friday</td><td>10:00 AM – 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+          <tr><td>Sunday – Monday</td><td>Closed</td></tr>
+        </table>
+        <p style="margin-top:16px;color:var(--muted)">📍 920 E Johnson St<br>Madison, WI 53703</p>
+        <p style="margin-top:8px">📞 <a href="tel:+16085550185" style="color:var(--green-d);font-weight:700">(608) 555-0185</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Old Town Cycles</h4>
+        <p style="font-size:.93rem">Madison's neighborhood bike shop.<br>📞 <a href="tel:+16085550185" style="display:inline;color:#fff;font-weight:700">(608) 555-0185</a></p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#services">Services</a><a href="#prices">Repair Prices</a><a href="#fitting">Fitting &amp; Rentals</a>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <a href="#visit">Hours &amp; Location</a><a href="#dropoff">Drop Off a Bike</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Old Town Cycles (demo site — fictional content)</span>
+      <span>920 E Johnson St, Madison WI</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="#dropoff">🔧 Drop Off a Bike</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var ham=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
+  ham.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  var form=document.getElementById('dropForm'),msg=document.getElementById('dropMsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    ['dName','dPhone','dIssue'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(!el.value.trim()){el.style.borderColor='#dc2626';ok=false;}else{el.style.borderColor='';}
+    });
+    if(!ok)return;
+    msg.style.display='block';
+    form.querySelector('button[type=submit]').disabled=true;
+  });
+})();
+</script>
+</body>
+</html>
