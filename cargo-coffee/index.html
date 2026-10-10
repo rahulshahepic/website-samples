@@ -245,6 +245,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:560;line-height:1.05;letter-s
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden;
   transition:transform .25s ease, box-shadow .25s ease;
+  display:flex;flex-direction:column;
 }
 .loc-card:hover{transform:translateY(-5px)}
 .loc-card::before{
@@ -256,8 +257,8 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:560;line-height:1.05;letter-s
 .loc-card address{font-style:normal;margin-bottom:16px;color:var(--espresso-soft)}
 .hours{display:grid;grid-template-columns:auto 1fr;gap:4px 22px;margin:0 0 18px;font-size:.96rem}
 .hours dt{font-weight:600}.hours dd{color:var(--espresso-soft)}
-.loc-phone{font-weight:600;text-decoration:none;border-bottom:2px solid var(--terra);padding-bottom:1px}
-.loc-card .btn{margin-top:22px}
+.loc-phone{font-weight:600;text-decoration:none;border-bottom:2px solid var(--terra);padding-bottom:1px;margin-bottom:22px}
+.loc-card .btn{margin-top:auto;align-self:flex-start}
 
 /* ============================================================
    5. INSTAGRAM PLACEHOLDER
