@@ -84,13 +84,13 @@ section{padding:96px 0;position:relative}
 
 /* Hero visual: stylized gauge + wrench, pure SVG/CSS */
 .hero-visual{display:flex;justify-content:center}
-.gauge-card{position:relative;width:min(420px,100%);aspect-ratio:1;border-radius:24px;background:linear-gradient(160deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);padding:36px;overflow:hidden}
+.gauge-card{position:relative;width:min(420px,100%);border-radius:24px;background:linear-gradient(160deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);padding:36px 36px 30px;overflow:hidden}
 .gauge-card::after{content:"";position:absolute;inset:0;background:radial-gradient(500px 260px at 50% -10%,rgba(255,107,26,.14),transparent 65%);pointer-events:none}
 .gauge-card .badge-float{position:absolute;top:20px;right:20px;background:var(--accent-soft);border:1px solid rgba(255,107,26,.4);color:var(--accent);font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.18em;padding:7px 13px;border-radius:999px;z-index:2}
 .dial{position:relative;width:100%;aspect-ratio:1;z-index:1}
 .dial svg{width:100%;height:100%}
 .tick-labels{position:absolute;inset:0;pointer-events:none}
-.needle{transform-origin:50% 50%;animation:sweep 5s ease-in-out infinite}
+.needle{transform-box:view-box;transform-origin:150px 180px;animation:sweep 5s ease-in-out infinite}
 @keyframes sweep{0%,100%{transform:rotate(-38deg)}50%{transform:rotate(38deg)}}
 .gauge-meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;position:relative;z-index:1}
 .gauge-meta .rpm{font-family:var(--font-head);font-weight:800;font-size:1.6rem}
@@ -307,11 +307,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;background:#101215}
           <svg viewBox="0 0 300 300">
             <!-- dial ticks -->
             <g id="ticks"></g>
-            <!-- gauge arc -->
-            <path d="M 45 235 A 115 115 0 1 1 255 235" fill="none" stroke="rgba(245,243,238,.15)" stroke-width="14" stroke-linecap="round"/>
-            <path d="M 45 235 A 115 115 0 0 1 180 45" fill="none" stroke="#ff6b1a" stroke-width="14" stroke-linecap="round"/>
+            <!-- gauge arc: consistent center (150,180), r=115 -->
+            <path d="M 48.5 234 A 115 115 0 1 1 251.5 234" fill="none" stroke="rgba(245,243,238,.15)" stroke-width="14" stroke-linecap="round"/>
+            <path d="M 48.5 234 A 115 115 0 0 1 207.5 80.4" fill="none" stroke="#ff6b1a" stroke-width="14" stroke-linecap="round"/>
             <!-- redline zone -->
-            <path d="M 232 108 A 115 115 0 0 1 255 235" fill="none" stroke="#e5484d" stroke-width="14" stroke-linecap="round" opacity=".7"/>
+            <path d="M 263.3 160 A 115 115 0 0 1 251.5 234" fill="none" stroke="#e5484d" stroke-width="14" stroke-linecap="round" opacity=".7"/>
             <!-- needle -->
             <g class="needle">
               <line x1="150" y1="180" x2="150" y2="88" stroke="#f5f3ee" stroke-width="6" stroke-linecap="round"/>
@@ -638,7 +638,7 @@ const REVIEWS = [
   if(!g) return;
   const NS = 'http://www.w3.org/2000/svg';
   for(let i = 0; i <= 24; i++){
-    const a = (210 - i * 10) * Math.PI / 180; // sweep across dial
+    const a = (152 + i * (236/24)) * Math.PI / 180; // sweep across the top, matching the track arc
     const major = i % 4 === 0;
     const r1 = major ? 96 : 102, r2 = 110;
     const cx = 150, cy = 180;
