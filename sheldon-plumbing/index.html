@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheldon Plumbing — Verona, WI | Repairs, Water Heaters, Remodels</title>
+<meta name="description" content="Sheldon Plumbing has served the Verona and Madison area for 27 years. BBB A+ rated. Repairs, water heaters, remodels, drain cleaning. Call for 24/7 emergency service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2a4a; --navy-2:#163a63; --slate:#33475f; --accent:#f59e0b; --accent-d:#d97706;
+  --bg:#f7f8fa; --card:#ffffff; --line:#e3e8ef; --ink:#16233a; --muted:#5b6b82;
+  --radius:14px; --font-head:'Archivo',sans-serif; --font-body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-family:var(--font-head);font-size:.74rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-d);margin-bottom:12px}
+.sec-head{max-width:640px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:1rem;padding:15px 30px;border-radius:999px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#221a03;box-shadow:0 10px 26px rgba(245,158,11,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(245,158,11,.45)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-outline:hover{border-color:#fff}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(15,42,74,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-d));display:grid;place-items:center;font-family:var(--font-head);font-weight:900;font-size:1.3rem;color:#221a03;flex:none}
+.brand-name{font-family:var(--font-head);font-weight:800;font-size:1.15rem;letter-spacing:.02em}
+.brand-name small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.24em;color:#9fb4d0}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+.nav-links a{color:#dbe6f5;text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:#fff}
+.nav-phone{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;text-decoration:none;font-family:var(--font-head)}
+.nav-cta{background:var(--accent);color:#221a03;font-family:var(--font-head);font-weight:700;padding:11px 22px;border-radius:999px;text-decoration:none;font-size:.92rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;margin:5px 0}
+.mobile-menu{display:none;background:var(--navy-2);padding:12px 24px 24px}
+.mobile-menu a{display:block;color:#dbe6f5;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:500}
+.mobile-menu.open{display:block}
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#1d4a7c 100%);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 340px at 80% 10%,rgba(245,158,11,.16),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:900;letter-spacing:-.5px;margin:14px 0 18px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{color:#c3d3e8;font-size:1.12rem;max-width:520px;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.trust-row{display:flex;gap:28px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:10px;color:#c3d3e8;font-size:.92rem}
+.trust strong{color:#fff;font-family:var(--font-head)}
+.badge-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px;backdrop-filter:blur(4px)}
+.badge-card .big{font-family:var(--font-head);font-weight:900;font-size:3.4rem;color:var(--accent);line-height:1}
+.badge-card .big small{font-size:1.1rem;color:#fff;font-weight:700}
+.badge-card p{color:#c3d3e8;margin:14px 0 22px}
+.badge-list{list-style:none;display:grid;gap:12px}
+.badge-list li{display:flex;gap:12px;align-items:flex-start;color:#e6eefb;font-size:.95rem}
+.badge-list .check{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(245,158,11,.2);border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent);font-weight:800;font-size:.8rem}
+/* ---------- Services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,42,74,.12)}
+.svc .icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#e8eefb,#d4e0f5);display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px}
+.svc h3{font-size:1.12rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.93rem;margin-bottom:14px}
+.svc .from{font-family:var(--font-head);font-weight:700;color:var(--accent-d);font-size:.95rem}
+/* ---------- Why us ---------- */
+.why{background:var(--navy);color:#fff}
+.why .sec-head h2{color:#fff}
+.why .sec-head p{color:#a9bdd6}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px 28px}
+.why-card .num{font-family:var(--font-head);font-weight:900;font-size:2.6rem;color:var(--accent);line-height:1;margin-bottom:10px}
+.why-card h3{margin-bottom:8px;font-size:1.1rem}
+.why-card p{color:#a9bdd6;font-size:.94rem}
+/* ---------- Booking ---------- */
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:0 24px 60px rgba(15,42,74,.10)}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.96rem;background:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:.85rem;color:var(--muted);margin-top:14px;text-align:center}
+.emergency{background:linear-gradient(135deg,#7f1d1d,#b91c1c);color:#fff;border-radius:20px;padding:36px;margin-top:28px}
+.emergency h3{font-size:1.3rem;margin-bottom:8px}
+.emergency p{color:#fecaca;margin-bottom:18px}
+.emergency a{display:inline-block;background:#fff;color:#7f1d1d;font-family:var(--font-head);font-weight:800;padding:14px 30px;border-radius:999px;text-decoration:none;font-size:1.1rem}
+/* ---------- Testimonials ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px}
+.testi .stars{color:var(--accent-d);letter-spacing:3px;margin-bottom:14px}
+.testi blockquote{font-size:.98rem;margin-bottom:16px}
+.testi .who{font-weight:600;font-size:.9rem}
+.testi .who small{display:block;color:var(--muted);font-weight:400}
+/* ---------- Service area / hours ---------- */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.town-list{columns:2;list-style:none;margin-top:16px}
+.town-list li{padding:7px 0;color:var(--muted);border-bottom:1px dotted var(--line);font-size:.95rem}
+.hours-table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.hours-table td{padding:13px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours-table tr:last-child td{border-bottom:none}
+.hours-table td:last-child{text-align:right;font-weight:600}
+/* ---------- Footer ---------- */
+footer{background:var(--navy);color:#a9bdd6;padding:56px 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.foot-grid h4{color:#fff;font-family:var(--font-head);margin-bottom:14px;font-size:1rem}
+.foot-grid a{color:#a9bdd6;text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+.foot-grid a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+/* ---------- Mobile sticky CTA ---------- */
+.sticky-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(15,42,74,.98);border-top:1px solid rgba(255,255,255,.12)}
+.sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#221a03;font-family:var(--font-head);font-weight:800;font-size:1.05rem;padding:15px;border-radius:12px;text-decoration:none}
+/* ---------- Responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .book-grid,.area-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  .nav-phone{font-size:.9rem}
+  section{padding:64px 0}
+  .services-grid,.why-grid,.testi-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .sticky-call{display:block}
+  body{padding-bottom:76px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">S</span>
+      <span class="brand-name">SHELDON<small>PLUMBING</small></span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#book">Book Service</a></li>
+      </ul>
+    </nav>
+    <a class="nav-phone" href="tel:+16085550147">📞 (608) 555-0147</a>
+    <a class="nav-cta" href="#book">Request Service</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#book">Book Service</a>
+    <a href="tel:+16085550147">📞 Call (608) 555-0147</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<!-- CMS-EDITABLE: hero — headline, subtext, phone number -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--accent)">Verona &amp; Madison's plumber since 1999</span>
+      <h1>Plumbing done right, <span class="hl">the first time.</span></h1>
+      <p class="lead">27 years, one promise: honest work at a fair price. Repairs, water heaters, remodels, and drain cleaning — backed by our BBB A+ rating.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#book">Request Service Online</a>
+        <a class="btn btn-outline" href="tel:+16085550147">📞 (608) 555-0147</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust">⭐ <span><strong>5.0</strong> · 120+ reviews</span></div>
+        <div class="trust">🛡️ <span><strong>BBB A+</strong> accredited</span></div>
+        <div class="trust">🕒 <span><strong>27 yrs</strong> in business</span></div>
+      </div>
+    </div>
+    <div class="badge-card">
+      <div class="big">27<small> yrs</small></div>
+      <p>Family-run since 1999. Licensed, insured, and background-checked technicians — the same crew you'd recommend to your neighbors, because we are your neighbors.</p>
+      <ul class="badge-list">
+        <li><span class="check">✓</span> Upfront flat-rate pricing — no surprises</li>
+        <li><span class="check">✓</span> 24/7 emergency service</li>
+        <li><span class="check">✓</span> 2-year workmanship warranty</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<!-- CMS-EDITABLE: services — add/remove cards, edit prices -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service plumbing, start to finish</h2>
+      <p>One call handles it all — from a dripping faucet to a whole-house repipe.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc">
+        <div class="icon">🔧</div>
+        <h3>Repairs</h3>
+        <p>Leaks, clogs, running toilets, low pressure — diagnosed fast and fixed right.</p>
+        <div class="from">from $89</div>
+      </div>
+      <div class="svc">
+        <div class="icon">🔥</div>
+        <h3>Water Heaters</h3>
+        <p>Tank and tankless install, repair, and flush service. Same-week installs.</p>
+        <div class="from">from $1,450 installed</div>
+      </div>
+      <div class="svc">
+        <div class="icon">🛁</div>
+        <h3>Remodels</h3>
+        <p>Bathroom and kitchen rough-in and finish work, coordinated with your contractor.</p>
+        <div class="from">free estimates</div>
+      </div>
+      <div class="svc">
+        <div class="icon">🌀</div>
+        <h3>Drain Cleaning</h3>
+        <p>Camera inspection and hydro-jetting that clears what snakes can't.</p>
+        <div class="from">from $149</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<!-- CMS-EDITABLE: why-us — stats and blurbs -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Sheldon</span>
+      <h2>The shop Verona calls first</h2>
+      <p>We grew by word of mouth. Here's why people keep our number on the fridge.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">27</div>
+        <h3>Years in business</h3>
+        <p>Serving Verona, Madison, and Dane County since 1999 — through three generations of customers.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">A+</div>
+        <h3>BBB accredited</h3>
+        <p>A+ rating with the Better Business Bureau and a complaint record we're proud of: nearly spotless.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">24/7</div>
+        <h3>Emergency service</h3>
+        <p>Burst pipe at 2 AM? A real person answers, and a tech rolls — nights, weekends, holidays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<!-- CMS-EDITABLE: booking — form fields, phone number -->
+<section id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get scheduled</span>
+      <h2>Request service online</h2>
+      <p>Tell us what's going on — we'll confirm your appointment within one business hour.</p>
+    </div>
+    <div class="book-grid">
+      <div class="form-card">
+        <form id="serviceForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="fName">Name</label>
+              <input id="fName" type="text" placeholder="Jane Miller" required>
+            </div>
+            <div class="field">
+              <label for="fPhone">Phone</label>
+              <input id="fPhone" type="tel" placeholder="(608) 555-0100" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fService">What do you need?</label>
+            <select id="fService" required>
+              <option value="">Choose a service…</option>
+              <option>Repair (leak, clog, fixture)</option>
+              <option>Water heater install / repair</option>
+              <option>Remodel plumbing</option>
+              <option>Drain cleaning</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fWhen">Preferred day</label>
+            <select id="fWhen">
+              <option>As soon as possible</option>
+              <option>This week</option>
+              <option>Next week</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fMsg">Tell us what's happening</label>
+            <textarea id="fMsg" rows="4" placeholder="e.g. Water heater is leaking from the base…"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Request Service →</button>
+          <p class="form-note">Prefer to talk? Call <a href="tel:+16085550147" style="color:var(--accent-d);font-weight:600">(608) 555-0147</a></p>
+          <p class="form-note" id="formMsg" style="display:none;color:#15803d;font-weight:600">✓ Thanks! We'll call you back within one business hour.</p>
+        </form>
+      </div>
+      <div>
+        <h3 style="font-size:1.4rem;margin-bottom:12px">How it works</h3>
+        <ol style="margin:0 0 0 20px;color:var(--muted);display:grid;gap:12px">
+          <li><strong style="color:var(--ink)">You reach out</strong> — form, call, or text. A real person responds.</li>
+          <li><strong style="color:var(--ink)">Upfront price</strong> — flat-rate quote before any work starts.</li>
+          <li><strong style="color:var(--ink)">Fixed right</strong> — clean work, shoe covers, and a 2-year warranty.</li>
+        </ol>
+        <div class="emergency">
+          <h3>🚨 Plumbing emergency?</h3>
+          <p>Burst pipes, sewage backups, and no-hot-water calls jump the line — 24/7.</p>
+          <a href="tel:+16085550147">Call (608) 555-0147</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<!-- CMS-EDITABLE: testimonials -->
+<section id="reviews" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reviews</span>
+      <h2>Neighbors who'd call us again</h2>
+      <p>5.0 stars across 120+ Google reviews.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Water heater died on a Sunday. They answered, showed up Monday morning, and had hot water back by lunch. Fair price, zero upsell."</blockquote>
+        <div class="who">Dan K.<small>Verona</small></div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Third time using Sheldon — bathroom remodel rough-in this time. Clean, on schedule, and the quote was the price. Rare these days."</blockquote>
+        <div class="who">Priya S.<small>Madison</small></div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Drain we'd fought for a year — they camera-scoped it, jetted it, showed me the before and after. Honest people."</blockquote>
+        <div class="who">Mark T.<small>Fitchburg</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE AREA & HOURS ================= -->
+<!-- CMS-EDITABLE: service-area, hours -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Find us</span>
+      <h2>Proudly serving Dane County</h2>
+    </div>
+    <div class="area-grid">
+      <div>
+        <h3 style="margin-bottom:6px">Service area</h3>
+        <p style="color:var(--muted)">Based in Verona — we roll trucks across the greater Madison area daily.</p>
+        <ul class="town-list">
+          <li>Verona</li><li>Madison</li><li>Fitchburg</li><li>Middleton</li>
+          <li>Monona</li><li>Sun Prairie</li><li>Waunakee</li><li>Oregon</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px">Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>7:00 AM – 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>8:00 AM – 2:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Emergency only</td></tr>
+        </table>
+        <p style="margin-top:14px;color:var(--muted);font-size:.93rem">📍 221 Industrial Dr, Verona, WI 53593</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Sheldon Plumbing</h4>
+        <p style="font-size:.93rem">Family-run since 1999. Licensed &amp; insured · WI Master Plumber #000000</p>
+        <p style="font-size:.93rem;margin-top:10px">📞 <a href="tel:+16085550147" style="display:inline;color:#fff;font-weight:700">(608) 555-0147</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Repairs</a>
+        <a href="#services">Water Heaters</a>
+        <a href="#services">Remodels</a>
+        <a href="#services">Drain Cleaning</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#why">Why Sheldon</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Request Service</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sheldon Plumbing (demo site — fictional content)</span>
+      <span>BBB A+ Accredited Business</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="tel:+16085550147">📞 Call (608) 555-0147</a></div>
+
+<script>
+(function(){
+  "use strict";
+  var ham = document.getElementById('hamburger'),
+      menu = document.getElementById('mobileMenu');
+  ham.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var form = document.getElementById('serviceForm'),
+      msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName'),
+        phone = document.getElementById('fPhone'),
+        svc = document.getElementById('fService'),
+        ok = true;
+    [name, phone, svc].forEach(function(el){
+      if(!el.value.trim()){ el.style.borderColor = '#dc2626'; ok = false; }
+      else { el.style.borderColor = ''; }
+    });
+    if(!ok) return;
+    msg.style.display = 'block';
+    form.querySelector('button[type=submit]').disabled = true;
+  });
+})();
+</script>
+</body>
+</html>
